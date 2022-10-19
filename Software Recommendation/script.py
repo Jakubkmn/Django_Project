@@ -1,20 +1,20 @@
-from data import *
-from start import *
+import data as dt
+import start as st
 from linked_list import SLL
 
-start()
+st.start()
 
 def insert_genres():
     movie_genre_list = SLL()
-    for movie_genre in genre:
+    for movie_genre in dt.genre:
         movie_genre_list.insert_beginning(movie_genre)
     return movie_genre_list 
 
 def insert_movies():
     movie_list = SLL()
-    for movie_genre in genre:
+    for movie_genre in dt.genre:
         movie_sublist = SLL()
-        for movie in movies:
+        for movie in dt.movies:
             if movie[0] == movie_genre:
                 movie_sublist.insert_beginning(movie)
         movie_list.insert_beginning(movie_sublist)
